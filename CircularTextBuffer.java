@@ -31,3 +31,28 @@
                         return circArray.size();
                 }
         }
+
+
+++++++++++++
+
+//global variable
+CircBuf dBuf = new CircBuf(10);
+...
+//ie. in a banking method
+dBuf.addStr("Leaving bank");
+
++++++++++++++
+
+...
+                int px = 10;
+                int py = 100;
+                int addY = 14;
+                if (showDebugInfo) {
+                        if (dBuf.getSize() > 0) {
+                                final String[] dstr = dBuf.getStrs();
+                                for (String s : dstr) {
+                                        g.drawString(s, px, py += addY);
+                                }
+                        }
+                }
+...
